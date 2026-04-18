@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Lato", sans-serif;
+  
+  --color-bento-bg: #FCFAF7;
+  --color-bento-accent: #118151;
+  --color-bento-text: #2D3E50;
+  --color-bento-border: #F1E9E0;
+  --color-bento-label: #8C7E6D;
+  --color-bento-disclaimer-bg: #FFF9F2;
+  --color-bento-disclaimer-border: #FAE2C4;
+  --color-bento-disclaimer-text: #AF6A0E;
+}
+
+@layer base {
+  body {
+    @apply bg-bento-bg text-bento-text;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-white border border-bento-border rounded-2xl md:rounded-[2rem] p-6 md:p-8 shadow-[0_10px_40px_-15px_rgba(140,126,109,0.12)] flex flex-col transition-all duration-300 hover:shadow-[0_20px_50px_-20px_rgba(140,126,109,0.2)] md:hover:-translate-y-1;
+  }
+  
+  .bento-pill {
+    @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider;
+  }
+}
